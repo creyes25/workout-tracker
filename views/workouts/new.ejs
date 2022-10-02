@@ -1,0 +1,38 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Add a New Workout</h1>
+  <form action="/workouts" method="POST">
+    <label >
+      Date of workout:
+      <input type="date" name="workoutDate">
+    </label>
+
+    <label>
+      Difficulty: 
+      <input type="number" name="difficulty" min="1" max="5">
+    </label>
+    
+    <label>
+      Duration(in Min):
+      <input type="number">
+    </label>
+    <label>
+      Exercises:
+      <select name="" id="">
+        <option value="exercise">Exercise</option>
+      </select>
+    </label>
+
+    <label>
+      Note:
+      <input type="text" name="note">
+    </label>
+    <button type="submit">Add Workout </button>
+  </form>
+</main>
+
+
+
+<%- include('../partials/footer') %>

@@ -1,7 +1,9 @@
 import { Workout } from "../models/wokout.js"
 
 function newWorkout(req, res) {
-  console.log('new WORKOUT')
+  res.render('workouts/new',{
+    title: 'Add a Workout'
+  })
 }
 
 export {

@@ -18,14 +18,15 @@ const exerciseSchema = new Schema({
 
 
 const workoutSchema = new Schema({
-  date: Date,
+  workoutDate: Date,
   difficulty: {
     type: Number,
     min: 1,
     max: 5,
   },
-  note: String,
+  duration: Number,
   exercises: [exerciseSchema],
+  note: String,
   profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
