@@ -32,6 +32,27 @@
 
       <button type="submit">Add Exercise</button>
     </form>
+    <% if (workout.exercises.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Targets</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% workout.exercises.forEach(exercise => { %>
+            <tr>
+              <td><%= exercise.activity %> </td>
+              <td><%= exercise.target %> </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %> 
+      <h3>No Exercises Yet</h3>
+    <% } %>
   </section>
 </main>
 
