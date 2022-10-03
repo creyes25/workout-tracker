@@ -26,7 +26,7 @@ const workoutSchema = new Schema({
   },
   duration: Number,
   exercises: [exerciseSchema],
-  note: String,
+  description: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,

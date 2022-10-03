@@ -7,7 +7,7 @@ function newWorkout(req, res) {
 }
 
 function createWorkout(req, res) {
-  req.body.owner = req.user.profile._id
+  // req.body.owner = req.user.profile._id
   Workout.create(req.body)
   .then(workout => {
     res.redirect(`/workouts/new`)
@@ -42,11 +42,29 @@ function deleteWorkout(req, res) {
   })
 }
 
+function editWorkout(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    res.render('workouts/edit', {
+      title: 'Edit Workout',
+      workout
+    })
+  })
+}
+
+function updateWorkout(req, res) {
+  Workout.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(workout => {
+    res.redirect(`/workouts/${workout._id}`)
+  })
+}
+
 export {
   newWorkout as new,
   createWorkout as create,
   index,
   showWorkout as show,
   deleteWorkout as delete,
-
+  editWorkout as edit,
+  updateWorkout as update
 }

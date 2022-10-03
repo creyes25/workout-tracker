@@ -2,8 +2,8 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Add a New Workout</h1>
-  <form action="/workouts" method="POST">
+  <h1><%= title %> </h1>
+  <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
     <label >
       Date of workout:
       <input type="date" name="workoutDate">
@@ -11,12 +11,12 @@
 
     <label>
       Difficulty: 
-      <input type="number" name="difficulty" min="1" max="5">
+      <input type="number" name="difficulty" min="1" max="5" value="<%= workout.difficulty %>">
     </label>
     
     <label>
       Duration(in Min):
-      <input type="number" name="duration">
+      <input type="number" name="duration" value="<%= workout.duration %>"> 
     </label>
     <label>
       Exercises:
@@ -27,9 +27,9 @@
 
     <label>
       Description:
-      <input type="text" name="description">
+      <input type="text" name="description" value="<%= workout.description %>">
     </label>
-    <button type="submit">Add Workout </button>
+    <button type="submit">Save Workout</button>
   </form>
 </main>
 
