@@ -35,11 +35,18 @@ function showWorkout(req, res) {
   })
 }
 
+function deleteWorkout(req, res) {
+  Workout.findByIdAndDelete(req.params.id)
+  .then(workout => {
+    res.redirect('/workouts')
+  })
+}
+
 export {
   newWorkout as new,
   createWorkout as create,
   index,
   showWorkout as show,
-
+  deleteWorkout as delete,
 
 }

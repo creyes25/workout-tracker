@@ -20,12 +20,12 @@
           <td><%= workout.difficulty %> </td>
           <td><%= workout.duration %> "mins"</td>
           <td>
-            <form action="/workouts/<%= workout._id %>">
+            <form action="/workouts/<%= workout._id %>" method="get">
               <button>Details</button>
             </form>
           </td>
           <td>
-            <form action="/workouts/<%= workout._id %>?_method=DELETE">
+            <form action="/workouts/<%= workout._id %>?_method=DELETE" method="post">
               <button>Delete</button>
             </form>
           </td>

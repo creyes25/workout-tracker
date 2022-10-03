@@ -17,6 +17,9 @@ router.get('/:id', workoutsCtrl.show)
 // POST - /workouts -- post the new workout into database ()
 router.post('/', workoutsCtrl.create)
 
+// DELETE - /workouts/:id -- delete a workout
+router.delete('/:id', workoutsCtrl.delete)
+
 export {
   router
 }
