@@ -1,0 +1,40 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Workout List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Difficulty</th>
+        <th>Duration</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% workouts.forEach(workout => { %>
+        <tr>
+          <td><%= workout.workoutDate %> </td>
+          <td><%= workout.difficulty %> </td>
+          <td><%= workout.duration %> "mins"</td>
+          <td>
+            <form action="/workouts/<%= workout._id %>">
+              <button>Details</button>
+            </form>
+          </td>
+          <td>
+            <form action="/workouts/<%= workout._id %>?_method=DELETE">
+              <button>Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</main>
+
+
+
+<%- include('../partials/footer') %>

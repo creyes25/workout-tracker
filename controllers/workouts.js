@@ -6,6 +6,40 @@ function newWorkout(req, res) {
   })
 }
 
+function createWorkout(req, res) {
+  req.body.owner = req.user.profile._id
+  Workout.create(req.body)
+  .then(workout => {
+    res.redirect(`/workouts/new`)
+  })
+}
+
+function index(req, res) {
+  Workout.find({})
+  .then(workouts => {
+    res.render('workouts/index', {
+      workouts,
+      title: 'Workouts',
+
+    })
+  })
+}
+
+function showWorkout(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    res.render('workouts/show', {
+      title: 'Workout Details',
+      workout
+    })
+  })
+}
+
 export {
-  newWorkout as new
+  newWorkout as new,
+  createWorkout as create,
+  index,
+  showWorkout as show,
+
+
 }

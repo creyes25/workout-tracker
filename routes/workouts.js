@@ -1,10 +1,21 @@
-import { application, Router } from 'express'
+import { Router } from 'express'
+import { isLoggedIn } from '../middleware/middleware.js'
 import * as workoutsCtrl from '../controllers/workouts.js'
+
 
 const router = Router()
 
-// GET /workouts/new -- create a new workout
+// GET /workouts/new -- create a new workout -- (isloggedin)
 router.get('/new', workoutsCtrl.new)
+
+// GET - /workouts -- view all workouts 
+router.get('/', workoutsCtrl.index)
+
+//GET - /workouts/:id -- view details of individual workout ()
+router.get('/:id', workoutsCtrl.show)
+
+// POST - /workouts -- post the new workout into database ()
+router.post('/', workoutsCtrl.create)
 
 export {
   router
