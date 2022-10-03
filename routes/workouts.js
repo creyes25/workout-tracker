@@ -20,6 +20,9 @@ router.get('/:id/edit', workoutsCtrl.edit)
 // POST - /workouts -- post the new workout into database ()
 router.post('/', workoutsCtrl.create)
 
+// POST - /workouts/:id/exercises
+router.post('/:id/exercises', workoutsCtrl.createExercise)
+
 // PUT - /workouts/:id
 router.put('/:id', workoutsCtrl.update)
 

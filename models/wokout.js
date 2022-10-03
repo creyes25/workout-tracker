@@ -11,8 +11,8 @@ const setSchema = new Schema({
 
 
 const exerciseSchema = new Schema({
-  name: String,
-  exerciseType: String,
+  activity: String,
+  target: String,
   sets: [setSchema]
 })
 

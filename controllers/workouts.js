@@ -59,6 +59,19 @@ function updateWorkout(req, res) {
   })
 }
 
+function createExercise(req, res) {
+  Workout.findById(req.params.id)
+  .then(workout => {
+    workout.exercises.push(req.body)
+    workout.save()
+    .then(() => {
+      res.redirect(`/workouts/${workout._id}`)
+    })
+  })
+}
+
+
+
 export {
   newWorkout as new,
   createWorkout as create,
@@ -66,5 +79,6 @@ export {
   showWorkout as show,
   deleteWorkout as delete,
   editWorkout as edit,
-  updateWorkout as update
+  updateWorkout as update,
+  createExercise
 }

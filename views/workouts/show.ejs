@@ -13,8 +13,25 @@
     <div><%= workout.duration %> </div>
     <div>Description:</div>
     <div><%= workout.description %> </div>
-    <div>Exercises:</div>
-    <div><%= workout.exercises.length >= 1 ? workout.exercises : 'No exercises recorded' %></div>
+    <!-- <div>Exercises:</div>
+    <div><%= workout.exercises.length >= 1 ? workout.exercises : 'No exercises recorded' %></div> -->
+  </section>
+
+  <section>
+    <h2>Exercises</h2>
+    <form action="/workouts/<%= workout._id %>/exercises" method="POST">
+      <label>
+        Activity: 
+        <input type="text" name="activity" id="">
+      </label>
+
+      <label>
+        Target:
+        <input type="text" name="target" id="">
+      </label>
+
+      <button type="submit">Add Exercise</button>
+    </form>
   </section>
 </main>
 
