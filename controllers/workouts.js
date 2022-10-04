@@ -81,6 +81,18 @@ function newSet(req, res) {
   })
 }
 
+function createSet(req, res) {
+  Workout.findById(req.params.workoutId)
+  .then(workout => {
+    const exercise = workout.exercises.id(req.params.exerciseId)
+    exercise.sets.push(req.body)
+    workout.save()
+    .then (() => {
+      res.redirect(`/workouts/${workout._id}`)
+    })
+  })
+}
+
 
 export {
   newWorkout as new,
@@ -92,5 +104,6 @@ export {
   updateWorkout as update,
   createExercise,
   newSet,
+  createSet,
 
 }

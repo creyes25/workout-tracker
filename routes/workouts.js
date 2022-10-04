@@ -26,7 +26,8 @@ router.post('/', workoutsCtrl.create)
 // POST - /workouts/:id/exercises
 router.post('/:id/exercises', workoutsCtrl.createExercise)
 
-router.post('/')
+// POST - / 
+router.post('/:workoutId/exercises/:exerciseId/create', workoutsCtrl.createSet)
 
 // PUT - /workouts/:id
 router.put('/:id', workoutsCtrl.update)
