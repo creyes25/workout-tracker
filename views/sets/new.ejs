@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Add a Set</h1>
+  <form action="/workouts/<%= workout._id %>/exercises/<%= workout.exercise %>/create" method="post">
+    <label>
+      Set Number:
+      <input type="number" name="setNum">
+    </label>
+
+    <label>
+      Reps:
+      <input type="number" name="reps" >
+    </label>
+
+    <label>
+      Weight:
+      <input type="number" name="weight">
+    </label>
+    <button type="submit">Add Set</button>
+  </form>
+</main>
+
+
+
+<%- include('../partials/footer') %>

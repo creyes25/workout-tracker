@@ -32,13 +32,14 @@
 
       <button type="submit">Add Exercise</button>
     </form>
+    <br>
     <% if (workout.exercises.length) { %>
       <table>
         <thead>
           <tr>
             <th>Activity</th>
             <th>Targets</th>
-            <th></th>
+            <th>Sets</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +47,11 @@
             <tr>
               <td><%= exercise.activity %> </td>
               <td><%= exercise.target %> </td>
+              <td>
+                <a href="/workouts/<%= workout._id %>/exercises/<%= exercise._id %>/newset">
+                  <button>Add set</button>
+                </a>
+              </td>
             </tr>
           <% }) %>
         </tbody>
@@ -54,6 +60,8 @@
       <h3>No Exercises Yet</h3>
     <% } %>
   </section>
+
+
 </main>
 
 <%- include('../partials/footer') %>

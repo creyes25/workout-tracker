@@ -70,6 +70,16 @@ function createExercise(req, res) {
   })
 }
 
+function newSet(req, res) {
+  Workout.findById(req.params.workoutId)
+  .then(workout => {
+    res.render('sets/new', {
+      title: 'Add new set',
+      workout: workout,
+      exercise: workout.exercises.id(req.params.exerciseId)
+    })
+  })
+}
 
 
 export {
@@ -80,5 +90,7 @@ export {
   deleteWorkout as delete,
   editWorkout as edit,
   updateWorkout as update,
-  createExercise
+  createExercise,
+  newSet,
+
 }

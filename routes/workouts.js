@@ -17,11 +17,16 @@ router.get('/:id', workoutsCtrl.show)
 // GET - /workouts/:id/edit
 router.get('/:id/edit', workoutsCtrl.edit)
 
+// GET - /workouts/:workoutId/exercises/exerciseId/newset
+router.get('/:workoutId/exercises/:exerciseId/newset', workoutsCtrl.newSet)
+
 // POST - /workouts -- post the new workout into database ()
 router.post('/', workoutsCtrl.create)
 
 // POST - /workouts/:id/exercises
 router.post('/:id/exercises', workoutsCtrl.createExercise)
+
+router.post('/')
 
 // PUT - /workouts/:id
 router.put('/:id', workoutsCtrl.update)
