@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Details for Exercise, <%= exercise.activity %> </h1>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Set Number</th>
+          <th>Reps</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% exercise.sets.forEach(set => { %>
+          <tr>
+            <td><%= set.setNum %> </td>
+            <td><%= set.reps %> </td>
+            <td><%= set.weight %> </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

@@ -17,19 +17,22 @@ router.get('/:id', workoutsCtrl.show)
 // GET - /workouts/:id/edit
 router.get('/:id/edit', workoutsCtrl.edit)
 
-// GET - /workouts/:workoutId/exercises/exerciseId/newset
+// GET - /workouts/:workoutId/exercises/:exerciseId/newset
 router.get('/:workoutId/exercises/:exerciseId/newset', workoutsCtrl.newSet)
+
+// GET - /workouts/:workoutId/exercises/:exerciseId -- get details on certain exercise
+router.get('/:workoutId/exercises/:exerciseId',  workoutsCtrl.showExercise)
 
 // POST - /workouts -- post the new workout into database ()
 router.post('/', workoutsCtrl.create)
 
-// POST - /workouts/:id/exercises
+// POST - /workouts/:id/exercises -- post new exercise into the workout
 router.post('/:id/exercises', workoutsCtrl.createExercise)
 
-// POST - / 
+// POST - /workouts/:workoutId/exercises/:exerciseId/create -- post a new set into an exercise
 router.post('/:workoutId/exercises/:exerciseId/create', workoutsCtrl.createSet)
 
-// PUT - /workouts/:id
+// PUT - /workouts/:id  -- update workout
 router.put('/:id', workoutsCtrl.update)
 
 // DELETE - /workouts/:id -- delete a workout

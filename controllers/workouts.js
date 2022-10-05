@@ -10,7 +10,7 @@ function createWorkout(req, res) {
   // req.body.owner = req.user.profile._id
   Workout.create(req.body)
   .then(workout => {
-    res.redirect(`/workouts/new`)
+    res.redirect(`/workouts`)
   })
 }
 
@@ -93,6 +93,15 @@ function createSet(req, res) {
   })
 }
 
+function showExercise(req, res) {
+  Workout.findById(req.params.workoutId)
+  .then(workout => {
+    res.render('exercises/show', {
+      title: 'Exercise Details' ,
+      exercise: workout.exercises.id(req.params.exerciseId)
+    })
+  })
+}
 
 export {
   newWorkout as new,
@@ -105,5 +114,5 @@ export {
   createExercise,
   newSet,
   createSet,
-
+  showExercise
 }
