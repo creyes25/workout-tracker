@@ -7,7 +7,7 @@ function newWorkout(req, res) {
 }
 
 function createWorkout(req, res) {
-  // req.body.owner = req.user.profile._id
+  req.body.owner = req.user.profile._id
   Workout.create(req.body)
   .then(workout => {
     res.redirect(`/workouts`)
