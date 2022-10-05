@@ -53,9 +53,16 @@ function editWorkout(req, res) {
 }
 
 function updateWorkout(req, res) {
-  Workout.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  Workout.findById(req.params.id)
   .then(workout => {
-    res.redirect(`/workouts/${workout._id}`)
+    if (workout.owner.equals(req.user.profile._id)){
+      workout.update(req.body, {new: true})
+      .then(updateWorkout => {
+        res.redirect(`/workouts/${workout._id}`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
   })
 }
 
