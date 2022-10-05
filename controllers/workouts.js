@@ -15,15 +15,15 @@ function createWorkout(req, res) {
 }
 
 function index(req, res) {
-  Workout.find({})
+  Workout.find({owner: req.user.profile._id})
   .then(workouts => {
-    res.render('workouts/index', {
-      workouts,
-      title: 'Workouts',
-
-    })
+  res.render('workouts/index', {
+    workouts,
+    title: 'Workouts',
+  })
   })
 }
+
 
 function showWorkout(req, res) {
   Workout.findById(req.params.id)
