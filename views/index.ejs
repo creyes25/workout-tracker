@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>Welcome, <%= user ? user.profile.name : "friend!" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -10,7 +10,17 @@
         alt="<%= user.profile.name %> avatar"
       />
     </div>
-  <% } %>
+  <% }else { %>
+    <!-- <div>
+      <h2>Track Your Workouts</h3>
+      <p>Track the workouts you have completed, and all the exercises for each workout.</p>
+      <h2>Keep your self organized.</h2>
+    </div>
+    <div>
+      ready set log
+    </div> -->
+  <% } %> 
+
 </main>
 
 <%- include('./partials/footer') %>
