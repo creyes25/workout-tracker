@@ -4,21 +4,22 @@
 <main>
   <h1>Add a Set</h1>
   <form action="/workouts/<%= workout._id %>/exercises/<%= exercise._id %>/create" method="post">
-    <label>
-      Set Number:
-      <input type="number" name="setNum">
-    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping">Set Number</span>
+      <input type="number" name="setNum" class="form-control" aria-describedby="addon-wrapping" >
+    </div>
 
-    <label>
-      Reps:
-      <input type="number" name="reps" >
-    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping">Reps</span>
+      <input type="number" name="reps" class="form-control" aria-describedby="addon-wrapping" >
+    </div>
+    
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping">Weight</span>
+      <input type="number" name="weight" class="form-control" aria-describedby="addon-wrapping" >
+    </div>
 
-    <label>
-      Weight:
-      <input type="number" name="weight">
-    </label>
-    <button type="submit">Add Set</button>
+    <button class="btn btn-primary" type="submit">Add Set</button>
   </form>
 </main>
 
