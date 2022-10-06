@@ -1,0 +1,20 @@
+section {
+  text-align: center;
+}
+
+.table {
+  background-color: #cfc7d2ad;
+  background-blend-mode: normal;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 10px 10px 10px #d4cbe5 inset;
+}
+
+thead {
+  background-color: #bea8aab9;
+  font-size: 23px;
+  box-shadow: 5px 8px 10px #d4cbe5 inset;
+}
+td {
+  margin:50px
+}

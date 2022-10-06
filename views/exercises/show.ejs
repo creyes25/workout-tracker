@@ -1,10 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/exercises/show.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1>Details for Exercise, <%= exercise.activity %> </h1>
   <section>
-    <table>
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th>Set Number</th>
@@ -23,7 +24,7 @@
       </tbody>
     </table>
     <a href="/workouts/<%= workout._id %>/exercises/<%= exercise._id %>/newset">
-      <button>Add set</button>
+      <button class="btn btn-primary">Add set</button>
     </a>
   </section>
 </main>
