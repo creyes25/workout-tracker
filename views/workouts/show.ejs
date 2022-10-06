@@ -1,36 +1,36 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/show.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Details for workout done, <%= workout.workoutDate %> </h1>
-  <form action="/workouts/<%= workout._id %>/edit" method="get">
-    <button>Edit Workout</button>
-  </form>
-  <section>
+  <h1>Workout Completed on, <%= workout.workoutDate %> </h1>
+
+  <section class="workout-details">
     <div>Difficulty:</div>
     <div><%= workout.difficulty %> </div>
     <div>Duration:</div>
-    <div><%= workout.duration %> </div>
+    <div><%= hours %> <%= hours === 1 ? 'hour' : 'hours' %>,  <%= mins %>  <%= mins === 1 ? 'minute' : 'minutes' %> </div>
     <div>Description:</div>
     <div><%= workout.description %> </div>
-    <!-- <div>Exercises:</div>
-    <div><%= workout.exercises.length >= 1 ? workout.exercises : 'No exercises recorded' %></div> -->
   </section>
-
+  <form action="/workouts/<%= workout._id %>/edit" method="get">
+    <button class="btn btn-primary">Edit Workout</button>
+  </form>
   <section>
     <h2>Exercises</h2>
-    <form action="/workouts/<%= workout._id %>/exercises" method="POST">
-      <label>
-        Activity: 
-        <input type="text" name="activity" id="">
-      </label>
+    <form action="/workouts/<%= workout._id %>/exercises" method="POST" class="exercises-form">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="addon-wrapping">Activity</span>
+        <input type="text" name="activity" class="form-control" aria-describedby="addon-wrapping">
+      </div>
 
-      <label>
-        Target:
-        <input type="text" name="target" id="">
-      </label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="addon-wrapping">Targets</span>
+        <input type="text" name="target" class="form-control" >
+      </div>
 
-      <button type="submit">Add Exercise</button>
+
+      <button class="btn btn-primary" type="submit">Add Exercise</button>
     </form>
     <br>
     <% if (workout.exercises.length) { %>

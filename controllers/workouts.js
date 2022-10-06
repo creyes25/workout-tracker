@@ -29,10 +29,12 @@ function showWorkout(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
     if (workout.owner.equals(req.user.profile._id)){
-    res.render('workouts/show', {
-      title: 'Workout Details',
-      workout
-    })
+      res.render('workouts/show', {
+        title: 'Workout Details',
+        workout,
+        hours : Math.floor(workout.duration / 60),
+        mins : workout.duration % 60
+      })
     }else {
       throw new Error('NOT AUTHORIZED')
     }
