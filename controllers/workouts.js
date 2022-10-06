@@ -84,23 +84,27 @@ function createExercise(req, res) {
 function newSet(req, res) {
   Workout.findById(req.params.workoutId)
   .then(workout => {
-    res.render('sets/new', {
-      title: 'Add new set',
-      workout: workout,
-      exercise: workout.exercises.id(req.params.exerciseId)
-    })
+    if (workout.owner.equals(req.user.profile._id)){
+      res.render('sets/new', {
+        title: 'Add new set',
+        workout: workout,
+        exercise: workout.exercises.id(req.params.exerciseId)
+      })
+    }
   })
 }
 
 function createSet(req, res) {
   Workout.findById(req.params.workoutId)
   .then(workout => {
-    const exercise = workout.exercises.id(req.params.exerciseId)
-    exercise.sets.push(req.body)
-    workout.save()
-    .then (() => {
-      res.redirect(`/workouts/${workout._id}`)
-    })
+    if (workout.owner.equals(req.user.profile._id)){
+      const exercise = workout.exercises.id(req.params.exerciseId)
+      exercise.sets.push(req.body)
+      workout.save()
+      .then (() => {
+        res.redirect(`/workouts/${workout._id}`)
+      })
+    } 
   })
 }
 
