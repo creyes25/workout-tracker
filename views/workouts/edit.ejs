@@ -4,26 +4,27 @@
 <main>
   <h1><%= title %> </h1>
   <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
-    <label >
-      Date of workout:
-      <input type="date" name="workoutDate">
-    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping"> Date of workout</span>
+      <input type="date" name="workoutDate" class="form-control" aria-describedby="addon-wrapping">
+    </div>
 
-    <label>
-      Difficulty: 
-      <input type="number" name="difficulty" min="1" max="5" value="<%= workout.difficulty %>">
-    </label>
-    
-    <label>
-      Duration(in Min):
-      <input type="number" name="duration" value="<%= workout.duration %>"> 
-    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping"> Difficulty</span>
+      <input type="number" name="difficulty" class="form-control"  min="1" max="5" aria-describedby="addon-wrapping" value="<%= workout.difficulty %>">
+    </div>
 
-    <label>
-      Description:
-      <input type="text" name="description" value="<%= workout.description %>">
-    </label>
-    <button type="submit">Save Workout</button>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping">Duration</span>
+      <span class="input-group-text" id="addon-wrapping">mins</span>
+      <input type="number" name="duration" class="form-control" aria-describedby="addon-wrapping" value="<%= workout.duration %>">
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="addon-wrapping">Description</span>
+      <input type="text" name="description" class="form-control" aria-describedby="addon-wrapping" value="<%= workout.description %>">
+    </div>
+    <button class="btn btn-primary"  type="submit">Save Workout</button>
   </form>
 </main>
 
