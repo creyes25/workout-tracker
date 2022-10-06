@@ -28,10 +28,12 @@ function index(req, res) {
 function showWorkout(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
+    let workoutDt = workout.workoutDate.toDateString()
     if (workout.owner.equals(req.user.profile._id)){
       res.render('workouts/show', {
         title: 'Workout Details',
         workout,
+        workoutDt,
         hours : Math.floor(workout.duration / 60),
         mins : workout.duration % 60
       })

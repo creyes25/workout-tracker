@@ -8,7 +8,7 @@
     <div class="card text-center">
       <a href="/workouts/<%= workout._id %>" class="text-decoration-none">
         <div class="card-body">
-          <h3 class="card-title"><%= workout.workoutDate %></h3>
+          <h3 class="card-title"><%= workout.workoutDate.toDateString() %></h3>
           <p class="card-text">Difficulty: <%= workout.difficulty %></p>
           <form action="/workouts/<%= workout._id %>?_method=DELETE" method="post">
             <button class="btn btn-primary">Delete</button>   
