@@ -120,7 +120,8 @@ function showExercise(req, res) {
     if (workout.owner.equals(req.user.profile._id)){
       res.render('exercises/show', {
         title: 'Exercise Details' ,
-        exercise: workout.exercises.id(req.params.exerciseId)
+        exercise: workout.exercises.id(req.params.exerciseId),
+        workout,
       })
     }else {
       throw new Error('NOT AUTHORIZED')
