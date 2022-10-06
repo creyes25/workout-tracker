@@ -4,18 +4,20 @@
 
 <main>
   <h1>Workouts</h1>
+  <section>
   <% workouts.forEach(workout => { %>
-    <div class="card text-center">
-      <a href="/workouts/<%= workout._id %>" class="text-decoration-none">
-        <div class="card-body">
-          <h3 class="card-title"><%= workout.workoutDate.toDateString() %></h3>
-          <p class="card-text">Difficulty: <%= workout.difficulty %></p>
-          <form action="/workouts/<%= workout._id %>?_method=DELETE" method="post">
-            <button class="btn btn-primary">Delete</button>   
-        </div>
-      </a>
-    </div>
-  <% }) %>
+      <div class="card text-center">
+        <a href="/workouts/<%= workout._id %>" class="text-decoration-none">
+          <div class="card-body">
+            <h3 class="card-title"><%= workout.workoutDate.toDateString() %></h3>
+            <p class="card-text">Difficulty: <%= workout.difficulty %></p>
+            <form action="/workouts/<%= workout._id %>?_method=DELETE" method="post">
+              <button class="btn btn-primary">Delete</button>   
+          </div>
+        </a>
+      </div>
+    <% }) %>
+  </section>
 </main>
 
 
