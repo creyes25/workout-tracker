@@ -28,10 +28,14 @@ function index(req, res) {
 function showWorkout(req, res) {
   Workout.findById(req.params.id)
   .then(workout => {
+    if (workout.owner.equals(req.user.profile._id)){
     res.render('workouts/show', {
       title: 'Workout Details',
       workout
     })
+    }else {
+      throw new Error('NOT AUTHORIZED')
+    }
   })
 }
 
