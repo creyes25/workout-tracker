@@ -90,6 +90,8 @@ function newSet(req, res) {
         workout: workout,
         exercise: workout.exercises.id(req.params.exerciseId)
       })
+    }else {
+      throw new Error('NOT AUTHORIZED')
     }
   })
 }
@@ -104,17 +106,23 @@ function createSet(req, res) {
       .then (() => {
         res.redirect(`/workouts/${workout._id}`)
       })
-    } 
+    }else {
+      throw new Error('NOT AUTHORIZED')
+    }
   })
 }
 
 function showExercise(req, res) {
   Workout.findById(req.params.workoutId)
   .then(workout => {
-    res.render('exercises/show', {
-      title: 'Exercise Details' ,
-      exercise: workout.exercises.id(req.params.exerciseId)
-    })
+    if (workout.owner.equals(req.user.profile._id)){
+      res.render('exercises/show', {
+        title: 'Exercise Details' ,
+        exercise: workout.exercises.id(req.params.exerciseId)
+      })
+    }else {
+      throw new Error('NOT AUTHORIZED')
+    }
   })
 }
 
