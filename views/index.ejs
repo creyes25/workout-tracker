@@ -2,8 +2,9 @@
 <%- include('./partials/nav') %>
 
 <main id="main">
-  <h1>Welcome, <%= user ? user.profile.name : "friend!" %></h1>
+  <h1>Welcome, to your personal tracker</h1>
   <% if (user?.profile.avatar) { %>
+    <h2><%= user.profile.name %> </h2>
     <div>
       <img
         src="<%= user.profile.avatar %>"
@@ -11,14 +12,14 @@
       />
     </div>
   <% }else { %>
-    <!-- <div>
-      <h2>Track Your Workouts</h3>
-      <p>Track the workouts you have completed, and all the exercises for each workout.</p>
-      <h2>Keep your self organized.</h2>
+    <div class="welcome">
+      <h2 >Track Your Workouts</h3>
+      <p >Where you can track personal workouts and be able to see your improvement </p>
+      <p >Sign in to start tracking!</p>
     </div>
     <div>
-      ready set log
-    </div> -->
+      <img src="../public/images/welcome.jpg" alt="workout" width=”500″ height=”600″>
+    </div>
   <% } %> 
 
 </main>

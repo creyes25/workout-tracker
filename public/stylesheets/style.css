@@ -19,7 +19,7 @@ body {
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-  margin: 2px ;
+  margin: 3px ;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
@@ -66,12 +66,13 @@ nav > .icon {
 }
 
 main {
+  grid-area: main;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 30px;
-
+  padding: 10px 20px;
 }
 
 h1 {
@@ -130,4 +131,12 @@ nav > a {
   margin-top: 50px;
 }
 
+p {
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 35px;
+}
 
