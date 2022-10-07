@@ -29,7 +29,10 @@
   * Homepage Image: https://www.vecteezy.com/
 
 ## Next Steps: 
+  - [ ] Organize workouts to plan future workouts.
   - [ ] Calendar view for workouts.
+  - [ ] Create a mobile friendly UI.
   - [ ] Implement dark mode.
   - [ ] Implement feature where user can add a exercise type.
-  - [ ] Implement feadture where user can give feedbacks to workouts.
+  - [ ] Implement feature where user can give feedbacks to workouts.
+  
