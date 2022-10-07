@@ -6,6 +6,8 @@
   * __Instructions :__
     * 
 
+## Planning Materials
+  * https://trello.com/b/tcKyhibB/workout-tracker "Trello"
 
 ## Screenshots: 
  ![alt text]()
