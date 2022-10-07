@@ -26,6 +26,7 @@
   * Background: https://heropatterns.com/
   * Fonts : https://fonts.google.com/
   * Buttons: https://uiverse.io/buttons
+  * Homepage Image: https://www.vecteezy.com/
 
 ## Next Steps: 
   - [ ] Calendar view for workouts.
