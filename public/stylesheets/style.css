@@ -20,7 +20,15 @@ body {
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 2px ;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+  font-size: 18px;
 }
+
 
 nav {
   background-color: #cfc7d2c1;
@@ -32,12 +40,38 @@ nav {
   min-height: 60px;
 }
 
+body > nav {
+  grid-area: nav;
+  background-color: #cfc7d2cd;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > i {
+  background-color: #cfc7d2c1;
+  color: #9d6d6d;
+  width: 50px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > .icon {
+  background-color: #cfc7d2c1;
+  color: #805c5c;
+  width: 50px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 30px;
+  margin: 30px;
+
 }
 
 h1 {

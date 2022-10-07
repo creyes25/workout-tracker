@@ -19,3 +19,8 @@ thead {
 td {
   margin:50px
 }
+
+.btn {
+  background-color: #a110c2af;
+  color: white;
+}

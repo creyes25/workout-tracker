@@ -1,4 +1,4 @@
-## __Title: Workout__ 
+## __Title: Workout Tracker__ 
 
 ## Getting Started: #
   * 
@@ -23,9 +23,9 @@
   * Bootstrap
 
 ## Credits: 
-  * Background Image :
-  * Animations: https://animate.style/
+  * Background: https://heropatterns.com/
   * Fonts : https://fonts.google.com/
+  * Buttons: https://uiverse.io/buttons
 
 ## Next Steps: 
   - [ ] 

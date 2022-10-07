@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Workouts</h1>
+  <h1><%= user.profile.name %>'s, Workouts </h1>
   <section>
     <% workouts.forEach(workout => { %>
       <div class="card text-center">
