@@ -8,8 +8,8 @@
   * [Trello](https://trello.com/b/tcKyhibB/workout-tracker) 
 
 ## Screenshots: 
- ![alt text]()
- ![alt text]()
+ ![alt text](./public/images/homepage.png)
+ ![alt text](./public/images/workout.png)
 ## Technologies Used: 
   * JavaScript
   * HTML
