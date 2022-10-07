@@ -12,15 +12,23 @@ function createWorkout(req, res) {
   .then(workout => {
     res.redirect(`/workouts`)
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function index(req, res) {
   Workout.find({owner: req.user.profile._id})
   .then(workouts => {
-  res.render('workouts/index', {
+    res.render('workouts/index', {
     workouts,
     title: 'Workouts',
   })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -41,12 +49,20 @@ function showWorkout(req, res) {
       throw new Error('NOT AUTHORIZED')
     }
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function deleteWorkout(req, res) {
   Workout.findByIdAndDelete(req.params.id)
   .then(workout => {
     res.redirect('/workouts')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -57,6 +73,10 @@ function editWorkout(req, res) {
       title: 'Edit Workout',
       workout
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -72,6 +92,10 @@ function updateWorkout(req, res) {
       throw new Error('NOT AUTHORIZED')
     }
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function createExercise(req, res) {
@@ -82,6 +106,10 @@ function createExercise(req, res) {
     .then(() => {
       res.redirect(`/workouts/${workout._id}`)
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/workouts')
   })
 }
 
@@ -97,6 +125,10 @@ function newSet(req, res) {
     }else {
       throw new Error('NOT AUTHORIZED')
     }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -114,6 +146,10 @@ function createSet(req, res) {
       throw new Error('NOT AUTHORIZED')
     }
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function showExercise(req, res) {
@@ -128,6 +164,10 @@ function showExercise(req, res) {
     }else {
       throw new Error('NOT AUTHORIZED')
     }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 

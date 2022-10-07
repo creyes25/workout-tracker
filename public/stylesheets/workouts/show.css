@@ -6,6 +6,16 @@ main {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
+  border: 1px solid black;
+}
+
+.card {
+  width: 370px;
+  background-color: #bd97da72;
+  border: 2px solid rgba(88, 4, 172, 0.642);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
 }
 
 section div:nth-child(even) {
@@ -13,6 +23,11 @@ section div:nth-child(even) {
   text-align: left;
 }
 
+section div:nth-child(odd) {
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+}
 
 .table {
   background-color: #cfc7d2ad;
@@ -24,7 +39,17 @@ thead {
   background-color: #bea8aab9;
   box-shadow: 5px 8px 10px #d4cbe5 inset;
 }
+
 td {
   margin:50px
 }
 
+.btn {
+  background-color: #a110c2af;
+  color: white;
+}
+
+.exercisebtn {
+  background-color: #78448377;
+  color: white;
+}

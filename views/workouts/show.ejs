@@ -3,9 +3,9 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Workout Completed on, <%= workoutDt %> </h1>
+  <h1>Workout Completed, <%= workoutDt %> </h1>
 
-  <section class="workout-details">
+  <section class="workout-details card">
     <div>Difficulty:</div>
     <div><%= workout.difficulty %> </div>
     <div>Duration:</div>
@@ -14,23 +14,22 @@
     <div><%= workout.description %> </div>
   </section>
   <form action="/workouts/<%= workout._id %>/edit" method="get">
-    <button class="btn btn-primary">Edit Workout</button>
+    <button class="btn">Edit Workout</button>
   </form>
   <section>
     <h2>Exercises</h2>
     <form action="/workouts/<%= workout._id %>/exercises" method="POST" class="exercises-form">
       <div class="input-group mb-3">
         <span class="input-group-text" id="addon-wrapping">Activity</span>
-        <input type="text" name="activity" class="form-control" aria-describedby="addon-wrapping">
+        <input type="text" name="activity" class="form-control" required>
       </div>
 
       <div class="input-group mb-3">
         <span class="input-group-text" id="addon-wrapping">Targets</span>
-        <input type="text" name="target" class="form-control" >
+        <input type="text" name="target" class="form-control" required>
       </div>
 
-
-      <button class="btn btn-primary" type="submit">Add Exercise</button>
+      <button class="btn" type="submit">Add Exercise</button>
     </form>
     <br>
     <% if (workout.exercises.length) { %>
@@ -51,7 +50,7 @@
               <td><%= exercise.sets.length %> </td>
               <td>
                 <a href="/workouts/<%= workout._id %>/exercises/<%= exercise._id %>">
-                  <button class="btn btn-primary">Details</button>
+                  <button class="btn exercisebtn">Details</button>
                 </a>
               </td>
             </tr>
