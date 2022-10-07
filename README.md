@@ -1,13 +1,11 @@
 ## __Title: Workout Tracker__ 
 
 ## Getting Started: #
-  * 
+  * Check out it [here](https://track-workouts.fly.dev/)
 
-  * __Instructions :__
-    * 
 
 ## Planning Materials
-  * https://trello.com/b/tcKyhibB/workout-tracker "Trello"
+  * [Trello](https://trello.com/b/tcKyhibB/workout-tracker) 
 
 ## Screenshots: 
  ![alt text]()
@@ -30,4 +28,7 @@
   * Buttons: https://uiverse.io/buttons
 
 ## Next Steps: 
-  - [ ] 
+  - [ ] Calendar view for workouts.
+  - [ ] Implement dark mode.
+  - [ ] Implement feature where user can add a exercise type.
+  - [ ] Implement feadture where user can give feedbacks to workouts.
